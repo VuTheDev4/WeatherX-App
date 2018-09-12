@@ -16,7 +16,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var cityLabel: UILabel!
     
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
-    let APP_ID = "API"
+    let APP_ID = "askMeForAPI"
     
     let locationManager = CLLocationManager()
     
@@ -28,14 +28,25 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
-        
     }
     
-    
-    
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        <#code#>
+        let location = locations[locations.count - 1]
+        if location.horizontalAccuracy > 0 {
+            locationManager.stopUpdatingLocation()
+            
+            print("longitude = \(location.coordinate.longitude), latitude = \(location.coordinate.latitude)")
+            
+            let latitude = String(location.coordinate.latitude)
+            let longitude = String(location.coordinate.longitude)
+            
+            let params : [String : String] = ["lat" : latitude, "lon" : longitude, "appid" : APP_ID ]
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+        cityLabel.text = "Location Unavilable"
     }
 
    
