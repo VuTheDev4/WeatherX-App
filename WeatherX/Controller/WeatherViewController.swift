@@ -18,7 +18,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var cityLabel: UILabel!
     
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
-    let APP_ID = "askMeForTheApi"
+    let APP_ID = "8a6bd5a219a499cf655b8ee864cb6a50"
     
     
     let locationManager = CLLocationManager()
@@ -98,7 +98,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func updateUIWithWeatherData() {
-        temperatureLabel.text = String(weatherDataModel.temperature)
+        temperatureLabel.text = " \(weatherDataModel.temperature)°"
         cityLabel.text = weatherDataModel.city
         weatherIcon.image = UIImage(named: "\(weatherDataModel.weatherIconName)")
         
