@@ -18,7 +18,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
     @IBOutlet weak var cityLabel: UILabel!
     
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
-    let APP_ID = "8a6bd5a219a499cf655b8ee864cb6a50"
+    let APP_ID = "apiGoesHere"
     
     
     let locationManager = CLLocationManager()
@@ -51,6 +51,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
                 
                 // JSON Results
                 let weatherJSON : JSON = JSON(response.result.value!)
+                print(weatherJSON)
                 //Parsing
                 self.updateWeatherData(json: weatherJSON)
             }
@@ -80,7 +81,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         
         print(error)
-        cityLabel.text = "Location Unavilable"
+        cityLabel.text = "Location Unavailable"
     }
     
     
@@ -100,6 +101,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
             updateUIWithWeatherData()
         }
         else {
+            temperatureLabel.text = ""
             cityLabel.text = "Weather Unavailable"
         }
     }

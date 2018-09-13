@@ -15,6 +15,8 @@ class WeatherDataModel {
     var condition : Int = 0
     var city : String = ""
     var weatherIconName : String = ""
+    var windSpeed : Int = 0
+    var description : String = ""
     
     
     func updateWeatherIcon(condition: Int) -> String {
