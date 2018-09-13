@@ -18,7 +18,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
     @IBOutlet weak var cityLabel: UILabel!
     
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
-    let APP_ID = "apiGoesHere"
+    let APP_ID = "ec1636863a30272c90dcacb70acef71f"
     
     
     let locationManager = CLLocationManager()
@@ -102,6 +102,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
         }
         else {
             temperatureLabel.text = ""
+            weatherIcon.image = UIImage(named: "sunny")
             cityLabel.text = "Weather Unavailable"
         }
     }
