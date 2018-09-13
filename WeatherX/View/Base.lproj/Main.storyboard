@@ -111,13 +111,16 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter City Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y8s-qU-Ep6">
-                                <rect key="frame" x="93" y="344" width="189" height="30"/>
+                                <rect key="frame" x="87.666666666666686" y="391" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="bbE-xo-ydJ"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbL-8x-Htd">
-                                <rect key="frame" x="12" y="394" width="351" height="30"/>
+                                <rect key="frame" x="12" y="461" width="351" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="lRr-rM-wur"/>
                                 </constraints>
@@ -135,14 +138,13 @@
                             <constraint firstItem="RAL-zV-Uh4" firstAttribute="trailing" secondItem="nOw-DZ-lJt" secondAttribute="trailing" id="2o1-Uc-o6n"/>
                             <constraint firstItem="mbL-8x-Htd" firstAttribute="leading" secondItem="nOw-DZ-lJt" secondAttribute="leading" constant="12" id="KR0-wr-3Js"/>
                             <constraint firstItem="8UD-ck-3yD" firstAttribute="leading" secondItem="nOw-DZ-lJt" secondAttribute="leading" constant="16" id="KlD-uG-l5Y"/>
-                            <constraint firstItem="nOw-DZ-lJt" firstAttribute="trailing" secondItem="y8s-qU-Ep6" secondAttribute="trailing" constant="93" id="P3O-nZ-Tdp"/>
+                            <constraint firstItem="y8s-qU-Ep6" firstAttribute="centerY" secondItem="tMy-P3-nP2" secondAttribute="centerY" id="Pyb-LT-22r"/>
                             <constraint firstItem="nOw-DZ-lJt" firstAttribute="trailing" secondItem="mbL-8x-Htd" secondAttribute="trailing" constant="12" id="TvL-Bv-TfW"/>
+                            <constraint firstItem="mbL-8x-Htd" firstAttribute="top" secondItem="y8s-qU-Ep6" secondAttribute="bottom" constant="40" id="WMQ-RB-fyg"/>
                             <constraint firstItem="RAL-zV-Uh4" firstAttribute="bottom" secondItem="nOw-DZ-lJt" secondAttribute="bottom" id="aPi-UA-r1e"/>
                             <constraint firstItem="RAL-zV-Uh4" firstAttribute="leading" secondItem="nOw-DZ-lJt" secondAttribute="leading" id="ag2-SR-WDT"/>
-                            <constraint firstItem="y8s-qU-Ep6" firstAttribute="leading" secondItem="nOw-DZ-lJt" secondAttribute="leading" constant="93" id="gyL-lf-Gmj"/>
+                            <constraint firstItem="y8s-qU-Ep6" firstAttribute="centerX" secondItem="tMy-P3-nP2" secondAttribute="centerX" id="dp5-cg-DR9"/>
                             <constraint firstItem="8UD-ck-3yD" firstAttribute="top" secondItem="tMy-P3-nP2" secondAttribute="top" constant="35" id="hfm-Ba-BE4"/>
-                            <constraint firstItem="y8s-qU-Ep6" firstAttribute="top" secondItem="nOw-DZ-lJt" secondAttribute="top" constant="300" id="odb-SA-DdT"/>
-                            <constraint firstItem="mbL-8x-Htd" firstAttribute="top" secondItem="y8s-qU-Ep6" secondAttribute="bottom" constant="20" id="vHc-W4-Yob"/>
                             <constraint firstItem="RAL-zV-Uh4" firstAttribute="top" secondItem="tMy-P3-nP2" secondAttribute="top" id="vXZ-FI-KZn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nOw-DZ-lJt"/>
