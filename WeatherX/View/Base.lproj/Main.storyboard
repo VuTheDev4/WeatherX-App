@@ -32,19 +32,19 @@
                                     <segue destination="6xW-I5-2EB" kind="presentation" identifier="changeCitySegue" id="cHV-lo-cxC"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloudy2" translatesAutoresizingMaskIntoConstraints="NO" id="TFH-Je-tEt">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TFH-Je-tEt">
                                 <rect key="frame" x="20" y="81" width="255" height="170"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="170" id="pOQ-Cm-cYl"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Atlanta" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="23" translatesAutoresizingMaskIntoConstraints="NO" id="vmw-lj-A5v">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="loading..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="23" translatesAutoresizingMaskIntoConstraints="NO" id="vmw-lj-A5v">
                                 <rect key="frame" x="20" y="726" width="335" height="52"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="44"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="82°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="31" translatesAutoresizingMaskIntoConstraints="NO" id="dpZ-D8-WW2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="31" translatesAutoresizingMaskIntoConstraints="NO" id="dpZ-D8-WW2">
                                 <rect key="frame" x="20" y="401" width="335" height="131"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="131" id="Ifp-Ao-YJi"/>
@@ -169,7 +169,6 @@
     <resources>
         <image name="citybackground1" width="2048" height="1365"/>
         <image name="citybackground2" width="5184" height="3456"/>
-        <image name="cloudy2" width="409.60000610351562" height="409.60000610351562"/>
         <image name="down" width="409.60000610351562" height="409.60000610351562"/>
         <image name="refresh" width="409.60000610351562" height="409.60000610351562"/>
         <image name="switch" width="409.60000610351562" height="409.60000610351562"/>
