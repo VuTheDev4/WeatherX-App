@@ -33,6 +33,14 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
         locationManager.startUpdatingLocation()
         
     }
+    
+    @IBAction func refreshButtonPressed(_ sender: Any) {
+        
+        updateUIWithWeatherData()
+    }
+    
+    
+    
     // HTTP Request
     func getWeatherData(url: String, parameters: [String: String]) {
         
@@ -65,7 +73,6 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
             let longitude = String(location.coordinate.longitude)
             
             let params : [String : String] = ["lat" : latitude, "lon" : longitude, "appid" : APP_ID ]
-            
             getWeatherData(url: WEATHER_URL, parameters: params)
         }
     }
