@@ -15,6 +15,7 @@ protocol ChangeCityDelegate {
 
 class ChangeCityViewController: UIViewController {
     
+
     
     var delegate : ChangeCityDelegate?
     
@@ -24,13 +25,11 @@ class ChangeCityViewController: UIViewController {
     @IBAction func getWeatherPressed(_ sender: Any) {
         
         let cityName = changeCityTextField.text!
-        
         delegate?.userEnteredNewCityName(city: cityName)
-        
+
         self.dismiss(animated: true, completion: nil)
         
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
