@@ -17,6 +17,11 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
     @IBOutlet weak var weatherIcon: UIImageView!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var sunriseLabel: UILabel!
+    @IBOutlet weak var sunsetLabel: UILabel!
+    @IBOutlet weak var highTempLabel: UILabel!
+    @IBOutlet weak var lowTempLabel: UILabel!
+    
     
     
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
@@ -24,6 +29,9 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
 
     let locationManager = CLLocationManager()
     let weatherDataModel = WeatherDataModel()
+    
+    let today = NSDate()
+    let locale = NSLocale.current
 
     
     override func viewDidLoad() {
@@ -92,11 +100,20 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
     func updateWeatherData(json: JSON) {
         // Changes JSON to double
         if let tempResult = json["main"]["temp"].double {
+            if let lowTempResult = json["main"]["temp_min"].double {
+                if let highTempResult = json["main"]["temp_max"].double {
+                    weatherDataModel.temperature = Int((tempResult - 273) * 1.8 + 32)
+                    weatherDataModel.lowTemp = Int((lowTempResult - 273) * 1.8 + 32)
+                    weatherDataModel.highTemp = Int((highTempResult - 273) * 1.8 + 32)
+                    weatherDataModel.city = json["name"].stringValue
+                    weatherDataModel.condition = json["weather"][0]["id"].intValue
+                    weatherDataModel.description = json["weather"][0]["description"].stringValue
+                    weatherDataModel.sunrise = json["sys"]["sunrise"].stringValue
+                    weatherDataModel.sunset = json["sys"]["sunset"].stringValue
+                    
+                }
+            }
             
-            weatherDataModel.temperature = Int((tempResult - 273) * 1.8 + 32)
-            weatherDataModel.city = json["name"].stringValue
-            weatherDataModel.condition = json["weather"][0]["id"].intValue
-            weatherDataModel.description = json["weather"][0]["description"].stringValue
             
             print(weatherDataModel.condition)
             
@@ -115,7 +132,9 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
         temperatureLabel.text = " \(weatherDataModel.temperature)°"
         cityLabel.text = weatherDataModel.city
         weatherIcon.image = UIImage(named: "\(weatherDataModel.weatherIconName)")
-        descriptionLabel.text = "\(weatherDataModel.description)"
+        descriptionLabel.text = "\(weatherDataModel.description)".capitalized
+        lowTempLabel.text = "Low: \(weatherDataModel.lowTemp)°"
+        highTempLabel.text = "High: \(weatherDataModel.highTemp)°"
         
         
     }
@@ -133,5 +152,8 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
         }
     }
     
+    
+
 }
+
 
